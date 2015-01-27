@@ -51,13 +51,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Number of Players: 9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrG-0E-R2v">
-                                <rect key="frame" x="36" y="207" width="215" height="21"/>
+                                <rect key="frame" x="36" y="207" width="214.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who do you want to be?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFr-Fm-ofP">
-                                <rect key="frame" x="36" y="273" width="189" height="21"/>
+                                <rect key="frame" x="36" y="273" width="188.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,8 +71,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HDK-28-D0j">
                                 <rect key="frame" x="36" y="310" width="528" height="29"/>
                                 <segments>
-                                    <segment title="Mafia"/>
                                     <segment title="Sherif"/>
+                                    <segment title="Mafia"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
@@ -117,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IQc-qR-eBu">
-                                <rect key="frame" x="140" y="140" width="320" height="320"/>
+                                <rect key="frame" x="140" y="240" width="320" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="cL6-JO-YFL"/>
@@ -145,14 +145,33 @@
                                     <outlet property="delegate" destination="Dui-c4-DwZ" id="07e-y1-Lvl"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Citizens Left:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXq-f5-Ob9">
+                                <rect key="frame" x="33" y="98" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find the mafia before everyone is dead!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-UQ-gFH">
+                                <rect key="frame" x="33" y="137" width="534" height="30"/>
+                                <color key="backgroundColor" red="0.97647064920000004" green="0.96470594409999999" blue="0.52340856479999998" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="IQc-qR-eBu" secondAttribute="trailing" id="3ZF-FU-u7N"/>
-                            <constraint firstAttribute="centerY" secondItem="IQc-qR-eBu" secondAttribute="centerY" id="5f4-Um-Fr6"/>
+                            <constraint firstAttribute="centerY" secondItem="IQc-qR-eBu" secondAttribute="centerY" multiplier="0.75" id="5f4-Um-Fr6"/>
+                            <constraint firstItem="7A8-UQ-gFH" firstAttribute="top" secondItem="HXq-f5-Ob9" secondAttribute="bottom" constant="19" id="8az-Zh-EKe"/>
+                            <constraint firstItem="7A8-UQ-gFH" firstAttribute="leading" secondItem="qKJ-vJ-frx" secondAttribute="leadingMargin" constant="17" id="B0u-5m-pSK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7A8-UQ-gFH" secondAttribute="trailing" constant="17" id="Hh2-Ci-fTP"/>
+                            <constraint firstAttribute="centerX" secondItem="7A8-UQ-gFH" secondAttribute="centerX" id="K9z-H1-KOM"/>
                             <constraint firstItem="IQc-qR-eBu" firstAttribute="leading" secondItem="qKJ-vJ-frx" secondAttribute="leadingMargin" id="SoD-BC-zbQ"/>
+                            <constraint firstItem="HXq-f5-Ob9" firstAttribute="leading" secondItem="qKJ-vJ-frx" secondAttribute="leadingMargin" constant="17" id="WgT-O6-69R"/>
                             <constraint firstAttribute="centerX" secondItem="IQc-qR-eBu" secondAttribute="centerX" id="YM5-az-i4a"/>
                             <constraint firstAttribute="centerY" secondItem="IQc-qR-eBu" secondAttribute="centerY" id="efh-Ah-K8v"/>
+                            <constraint firstItem="HXq-f5-Ob9" firstAttribute="top" secondItem="N0l-uK-lPb" secondAttribute="bottom" constant="34" id="oID-3m-1iY"/>
                             <constraint firstAttribute="centerX" secondItem="IQc-qR-eBu" secondAttribute="centerX" id="ofc-Hu-T87"/>
                         </constraints>
                         <variation key="default">
@@ -164,6 +183,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="citizensLeftLabel" destination="HXq-f5-Ob9" id="5I5-RS-KP2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEb-hl-fJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
