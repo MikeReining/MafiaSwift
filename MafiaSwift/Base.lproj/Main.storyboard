@@ -51,13 +51,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Number of Players: 9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrG-0E-R2v">
-                                <rect key="frame" x="36" y="207" width="214.5" height="20.5"/>
+                                <rect key="frame" x="36" y="207" width="215" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who do you want to be?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFr-Fm-ofP">
-                                <rect key="frame" x="36" y="273" width="188.5" height="20.5"/>
+                                <rect key="frame" x="36" y="273" width="189" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,6 +74,9 @@
                                     <segment title="Sherif"/>
                                     <segment title="Mafia"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="x6C-6k-X0A"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -189,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEb-hl-fJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="434"/>
+            <point key="canvasLocation" x="981" y="434"/>
         </scene>
     </scenes>
 </document>

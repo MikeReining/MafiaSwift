@@ -25,6 +25,14 @@ class ViewController: UIViewController {
         model!.launchGame()
     }
     
+    @IBAction func segmentedControlChanged(sender: AnyObject) {
+        if mafiaOrSherifSegmentedControl.selectedSegmentIndex == 1 {
+            let alert = UIAlertController(title: "Mafia Mode Coming Soon", message: "The Mafia mode has not been implemented yet.  Playing as Sherif is also fun!", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Ok, let's catch some Mafia!", style: .Default, handler: nil)
+            alert.addAction(action)
+            presentViewController(alert, animated: true, completion: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
