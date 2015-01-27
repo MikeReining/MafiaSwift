@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="egN-H2-hGX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -18,7 +20,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="278" y="-376"/>
+            <point key="canvasLocation" x="-522" y="434"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -33,57 +35,139 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjN-o6-DCW">
-                                <rect key="frame" x="277" y="260" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjN-o6-DCW">
+                                <rect key="frame" x="252" y="366" width="96" height="30"/>
+                                <state key="normal" title="Launch Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yWU-aA-pnV" kind="show" id="Kh6-dq-RDP"/>
+                                    <action selector="launchGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7XA-3a-Dgz"/>
+                                    <segue destination="Dui-c4-DwZ" kind="show" id="yfK-zv-ZUJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mafia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeZ-wh-B3j">
+                                <rect key="frame" x="268" y="157" width="64" height="29"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Number of Players: 9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrG-0E-R2v">
+                                <rect key="frame" x="36" y="207" width="215" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who do you want to be?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFr-Fm-ofP">
+                                <rect key="frame" x="36" y="273" width="189" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="9" minValue="3" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="K4e-Ne-fFt">
+                                <rect key="frame" x="34" y="234" width="532" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="1o6-2c-jJs"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HDK-28-D0j">
+                                <rect key="frame" x="36" y="310" width="528" height="29"/>
+                                <segments>
+                                    <segment title="Mafia"/>
+                                    <segment title="Sherif"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="HDK-28-D0j" secondAttribute="trailing" constant="20" id="4Th-bu-8fK"/>
+                            <constraint firstAttribute="centerX" secondItem="OjN-o6-DCW" secondAttribute="centerX" id="7k4-Ue-hXR"/>
+                            <constraint firstAttribute="centerY" secondItem="MeZ-wh-B3j" secondAttribute="centerY" multiplier="1.75" id="AKd-uh-IPu"/>
+                            <constraint firstItem="LrG-0E-R2v" firstAttribute="top" secondItem="MeZ-wh-B3j" secondAttribute="bottom" constant="21" id="BRH-Tl-PDC"/>
+                            <constraint firstItem="LrG-0E-R2v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="DBx-i3-iPq"/>
+                            <constraint firstItem="HDK-28-D0j" firstAttribute="top" secondItem="uFr-Fm-ofP" secondAttribute="bottom" constant="16" id="E8w-4S-cbH"/>
+                            <constraint firstItem="uFr-Fm-ofP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="EEz-iS-fH8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K4e-Ne-fFt" secondAttribute="trailing" constant="20" id="KI5-9H-m5A"/>
+                            <constraint firstItem="OjN-o6-DCW" firstAttribute="top" secondItem="HDK-28-D0j" secondAttribute="bottom" constant="28" id="NA1-og-1qT"/>
+                            <constraint firstItem="HDK-28-D0j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="a1b-ee-R4E"/>
+                            <constraint firstAttribute="centerX" secondItem="MeZ-wh-B3j" secondAttribute="centerX" id="bLJ-wg-vVY"/>
+                            <constraint firstItem="uFr-Fm-ofP" firstAttribute="top" secondItem="K4e-Ne-fFt" secondAttribute="bottom" constant="9" id="e98-CF-gGh"/>
+                            <constraint firstItem="K4e-Ne-fFt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="iwY-CG-cn9"/>
+                            <constraint firstItem="K4e-Ne-fFt" firstAttribute="top" secondItem="LrG-0E-R2v" secondAttribute="bottom" constant="7" id="lIK-In-LRl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uo1-Ve-0DZ"/>
+                    <connections>
+                        <outlet property="mafiaOrSherifSegmentedControl" destination="HDK-28-D0j" id="DKK-i5-Dk8"/>
+                        <outlet property="playerSlider" destination="K4e-Ne-fFt" id="Sml-xk-s1Q"/>
+                        <outlet property="playersLabel" destination="LrG-0E-R2v" id="kkG-s2-vlg"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="230" y="434"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="hYk-jT-1Qu">
+        <!--Game View Controller-->
+        <scene sceneID="Nlz-u4-t0a">
             <objects>
-                <collectionViewController id="yWU-aA-pnV" customClass="CollectionViewController" customModule="MafiaSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ytI-qk-HwN">
+                <viewController id="Dui-c4-DwZ" customClass="GameViewController" customModule="MafiaSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0l-uK-lPb"/>
+                        <viewControllerLayoutGuide type="bottom" id="TTa-CK-U2Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qKJ-vJ-frx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IQc-qR-eBu">
+                                <rect key="frame" x="140" y="140" width="320" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="cL6-JO-YFL"/>
+                                    <constraint firstAttribute="height" constant="320" id="edM-4U-ZpR"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dKa-R0-4Ox">
+                                    <size key="itemSize" width="75" height="75"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" reuseIdentifier="Cell" id="gDd-ql-gzo">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dui-c4-DwZ" id="dK7-pu-U1l"/>
+                                    <outlet property="delegate" destination="Dui-c4-DwZ" id="07e-y1-Lvl"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C28-78-IVG">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Tm5-XO-BWl">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="yWU-aA-pnV" id="PJD-tV-hRJ"/>
-                            <outlet property="delegate" destination="yWU-aA-pnV" id="pOU-yp-CsB"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uiT-Zp-cLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="IQc-qR-eBu" secondAttribute="trailing" id="3ZF-FU-u7N"/>
+                            <constraint firstAttribute="centerY" secondItem="IQc-qR-eBu" secondAttribute="centerY" id="5f4-Um-Fr6"/>
+                            <constraint firstItem="IQc-qR-eBu" firstAttribute="leading" secondItem="qKJ-vJ-frx" secondAttribute="leadingMargin" id="SoD-BC-zbQ"/>
+                            <constraint firstAttribute="centerX" secondItem="IQc-qR-eBu" secondAttribute="centerX" id="YM5-az-i4a"/>
+                            <constraint firstAttribute="centerY" secondItem="IQc-qR-eBu" secondAttribute="centerY" id="efh-Ah-K8v"/>
+                            <constraint firstAttribute="centerX" secondItem="IQc-qR-eBu" secondAttribute="centerX" id="ofc-Hu-T87"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3ZF-FU-u7N"/>
+                                <exclude reference="SoD-BC-zbQ"/>
+                                <exclude reference="efh-Ah-K8v"/>
+                                <exclude reference="ofc-Hu-T87"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QEb-hl-fJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="619"/>
+            <point key="canvasLocation" x="956" y="434"/>
         </scene>
     </scenes>
 </document>
